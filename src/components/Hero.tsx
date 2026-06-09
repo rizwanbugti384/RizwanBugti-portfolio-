@@ -1,0 +1,150 @@
+import { ArrowRight, Github, Linkedin, Mail, Sparkles, Terminal } from 'lucide-react';
+import { personalData } from '../data';
+
+interface HeroProps {
+  setActiveSection: (section: string) => void;
+}
+
+export default function Hero({ setActiveSection }: HeroProps) {
+  const handleContactClick = () => {
+    setActiveSection('contact');
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleProjectsClick = () => {
+    setActiveSection('projects');
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <section 
+      id="home" 
+      className="relative flex items-center min-h-[calc(100vh-4rem)] py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-200/50 dark:border-slate-800/50 overflow-hidden"
+    >
+      {/* Visual background accents */}
+      <div id="hero-bg-accent" className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-[10%] right-[5%] w-72 h-72 rounded-full bg-indigo-200/20 dark:bg-indigo-950/10 blur-[80px]" />
+        <div className="absolute bottom-[10%] left-[5%] w-80 h-80 rounded-full bg-slate-200/30 dark:bg-slate-800/10 blur-[100px]" />
+      </div>
+
+      <div id="hero-container" className="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+        {/* Main Text Intro */}
+        <div id="hero-text" className="md:col-span-8 flex flex-col space-y-6">
+          <div className="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100/50 dark:border-indigo-900/30 rounded-full px-3.5 py-1.5 w-fit">
+            <Sparkles size={14} className="text-indigo-600 dark:text-indigo-400" />
+            <span className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">
+              Software Developer
+            </span>
+          </div>
+
+          <div className="space-y-3">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold font-sans tracking-tight text-slate-900 dark:text-white leading-tight">
+              {personalData.name.split(' ')[0]} <br/>
+              <span className="text-indigo-600 dark:text-indigo-400 bg-linear-to-r from-indigo-600 to-indigo-500 dark:from-indigo-400 dark:to-indigo-300 bg-clip-text text-transparent">
+                {personalData.name.split(' ').slice(1).join(' ') || 'Bugti'}.
+              </span>
+            </h1>
+            <p className="text-lg sm:text-xl font-semibold text-slate-700 dark:text-slate-350">
+              {personalData.title}
+            </p>
+          </div>
+
+          <p className="text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl font-normal">
+            {personalData.subTitle}
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <button
+              id="hero-cta-contact"
+              onClick={handleContactClick}
+              className="px-6 py-3 rounded-xl font-bold text-sm tracking-wide text-white bg-indigo-600 hover:bg-indigo-500 dark:bg-indigo-500 dark:text-slate-950 dark:hover:bg-indigo-400 transition-all flex items-center justify-center space-x-2 cursor-pointer shadow-md shadow-indigo-100 dark:shadow-none"
+            >
+              <span>Get in touch</span>
+              <ArrowRight size={16} />
+            </button>
+            <button
+              id="hero-cta-projects"
+              onClick={handleProjectsClick}
+              className="px-6 py-3 rounded-xl font-semibold text-sm text-slate-700 dark:text-slate-300 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-800 border border-slate-200/50 dark:border-slate-700/50 transition-all flex items-center justify-center cursor-pointer"
+            >
+              <span>View my work</span>
+            </button>
+          </div>
+
+          {/* Social icons */}
+          <div id="hero-socials" className="flex items-center space-x-4 pt-6 border-t border-slate-100 dark:border-slate-800/60 w-fit">
+            <a
+              id="hero-social-github"
+              href={personalData.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+              title="GitHub Profile"
+            >
+              <Github size={18} />
+            </a>
+            <a
+              id="hero-social-linkedin"
+              href={personalData.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+              title="LinkedIn Profile"
+            >
+              <Linkedin size={18} />
+            </a>
+            <a
+              id="hero-social-email"
+              href={`mailto:${personalData.email}`}
+              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+              title="Email Contact"
+            >
+              <Mail size={18} />
+            </a>
+          </div>
+        </div>
+
+        {/* Visual Terminal/Graphic on Desktop */}
+        <div id="hero-graphic" className="hidden md:block md:col-span-4 justify-self-center w-full max-w-sm">
+          <div className="w-full aspect-square rounded-2xl border border-slate-200 dark:border-slate-850 bg-linear-to-b from-slate-50 to-white dark:from-slate-900/60 dark:to-slate-950 p-6 flex flex-col justify-between shadow-xs">
+            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+              <div className="flex space-x-1.5">
+                <span className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700" />
+                <span className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700" />
+                <span className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700" />
+              </div>
+              <Terminal size={14} className="text-slate-400 dark:text-slate-650" />
+            </div>
+
+            <div className="flex-1 py-6 flex flex-col justify-center space-y-4 font-mono text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-slate-800 dark:text-slate-200">
+                <span className="text-slate-400 dark:text-slate-600">%</span> npm install {personalData.name.split(' ')[0].toLowerCase()}
+              </p>
+              <p className="text-slate-400 dark:text-slate-600 leading-normal">
+                + portfolio@3.0.0<br/>
+                added 84 packages in 0.4s
+              </p>
+              <p className="text-slate-800 dark:text-slate-200">
+                <span className="text-slate-400 dark:text-slate-600">%</span> npx {personalData.name.split(' ')[0].toLowerCase()} dev
+              </p>
+              <p className="text-indigo-600 dark:text-indigo-400 font-semibold">
+                ⚡ Server running at port 3000
+              </p>
+            </div>
+
+            <div className="border-t border-slate-100 dark:border-slate-800 pt-4 flex justify-between items-center text-[10px] font-mono text-slate-400 dark:text-slate-500">
+              <span>LOC: 12,402</span>
+              <span>UTF-8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

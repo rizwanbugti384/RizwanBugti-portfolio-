@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Rizwan Bugti Portfolio",
+  "description": "A modern and responsive personal portfolio website for Rizwan Bugti, featuring light and dark mode, detailed skills, and a functional contact form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

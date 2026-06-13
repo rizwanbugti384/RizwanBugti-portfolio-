@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Inbox, Trash2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Inbox, Trash2, ChevronDown, ChevronUp, Github, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
 import { personalData } from '../data';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { ContactMessage } from '../types';
@@ -118,8 +118,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase">Email</h4>
-                    <a 
-                      href={`mailto:${personalData.email}`} 
+                    <a
+                      href={`mailto:${personalData.email}`}
                       className="text-sm font-semibold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 hover:underline break-all"
                     >
                       {personalData.email}
@@ -137,6 +137,33 @@ export default function Contact() {
                       {personalData.location}
                     </p>
                   </div>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
+                <h4 className="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-3">Follow Me</h4>
+                <div className="flex flex-wrap gap-2">
+                  <a href={personalData.github} target="_blank" rel="noopener noreferrer" title="GitHub"
+                    className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all">
+                    <Github size={13} /><span>GitHub</span>
+                  </a>
+                  <a href={personalData.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn"
+                    className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all">
+                    <Linkedin size={13} /><span>LinkedIn</span>
+                  </a>
+                  <a href={personalData.instagram} target="_blank" rel="noopener noreferrer" title="Instagram"
+                    className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-pink-500 dark:hover:text-pink-400 hover:border-pink-300 dark:hover:border-pink-700 transition-all">
+                    <Instagram size={13} /><span>Instagram</span>
+                  </a>
+                  <a href={personalData.facebook} target="_blank" rel="noopener noreferrer" title="Facebook"
+                    className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-700 transition-all">
+                    <Facebook size={13} /><span>Facebook</span>
+                  </a>
+                  <a href={personalData.twitter} target="_blank" rel="noopener noreferrer" title="X (Twitter)"
+                    className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all">
+                    <Twitter size={13} /><span>X (Twitter)</span>
+                  </a>
                 </div>
               </div>
             </div>

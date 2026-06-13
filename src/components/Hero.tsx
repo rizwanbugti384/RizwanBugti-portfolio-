@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Sparkles, Instagram, Facebook, Twitter } from 'lucide-react';
 import { personalData } from '../data';
 
 interface HeroProps {
@@ -77,17 +77,35 @@ export default function Hero({ setActiveSection }: HeroProps) {
             </button>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center justify-center md:justify-start space-x-4 pt-6 border-t border-slate-100 dark:border-slate-800/60 w-full">
+          {/* Social Icons - all platforms */}
+          <div className="flex items-center justify-center md:justify-start flex-wrap gap-2 pt-6 border-t border-slate-100 dark:border-slate-800/60 w-full">
             <a href={personalData.github} target="_blank" rel="noopener noreferrer"
+              title="GitHub"
               className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
               <Github size={18} />
             </a>
             <a href={personalData.linkedin} target="_blank" rel="noopener noreferrer"
+              title="LinkedIn"
               className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
               <Linkedin size={18} />
             </a>
+            <a href={personalData.instagram} target="_blank" rel="noopener noreferrer"
+              title="Instagram"
+              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-pink-500 dark:hover:text-pink-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+              <Instagram size={18} />
+            </a>
+            <a href={personalData.facebook} target="_blank" rel="noopener noreferrer"
+              title="Facebook"
+              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+              <Facebook size={18} />
+            </a>
+            <a href={personalData.twitter} target="_blank" rel="noopener noreferrer"
+              title="X (Twitter)"
+              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+              <Twitter size={18} />
+            </a>
             <a href={`mailto:${personalData.email}`}
+              title="Email"
               className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
               <Mail size={18} />
             </a>
@@ -97,9 +115,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
         {/* Profile Picture - ALL devices */}
         <div className="md:col-span-4 flex justify-center items-center w-full">
           <div className="relative group">
-            {/* Glow */}
             <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-400 opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-300" />
-            {/* Image */}
             <div className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full p-1 bg-gradient-to-br from-indigo-500 via-indigo-400 to-slate-300 dark:to-slate-700 shadow-xl">
               <img
                 src={personalData.avatarUrl}
@@ -107,7 +123,6 @@ export default function Hero({ setActiveSection }: HeroProps) {
                 className="w-full h-full rounded-full object-cover object-top border-4 border-white dark:border-slate-950"
               />
             </div>
-            {/* Available badge */}
             <div className="absolute bottom-2 right-2 md:bottom-3 md:right-3 flex items-center space-x-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-full px-2.5 py-1 md:px-3 md:py-1.5 shadow-md">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Available</span>

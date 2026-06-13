@@ -9,6 +9,9 @@ export const personalData = {
   location: "Pakistan",
   github: "https://github.com/rizwanbugti384",
   linkedin: "https://www.linkedin.com/in/rizwanbugti",
+  instagram: "https://www.instagram.com/rizwanbugti11",
+  facebook: "https://www.facebook.com/share/1XrAyvnMoN/",
+  twitter: "https://x.com/MRizwanbugti",
   resumeUrl: "#",
   avatarUrl: "/rizwan.png",
 };

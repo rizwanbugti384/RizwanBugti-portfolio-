@@ -5,10 +5,10 @@ export const personalData = {
   title: "Frontend & UI Developer",
   subTitle: "Building refined, high-performance web applications with clean, interactive designs and modern technologies.",
   aboutText: "I am a dedicated Frontend and UI Developer passionate about translating ideas into robust, aesthetically elegant web interfaces. Embracing modular structures, readable code, and clean layouts, I craft web applications that are as satisfying to use as they are under the hood. I specialize in the React ecosystem, Tailwind CSS, and TypeScript, and I am always looking for ways to push the boundaries of user experience design.",
-  email: "rizwanbugti013@gmail.com",
+  email: "rizwanbugti33@gmail.com",
   location: "Pakistan",
-  github: "https://github.com", // standard fallback
-  linkedin: "https://linkedin.com", // standard fallback
+  github: "https://github.com/rizwanbugti384",
+  linkedin: "https://www.linkedin.com/in/rizwanbugti",
   resumeUrl: "#",
   avatarUrl: "/rizwan.png",
 };

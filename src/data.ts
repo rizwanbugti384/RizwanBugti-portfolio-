@@ -10,6 +10,7 @@ export const personalData = {
   github: "https://github.com", // standard fallback
   linkedin: "https://linkedin.com", // standard fallback
   resumeUrl: "#",
+  avatarUrl: "/rizwan.png",
 };
 
 export const skillsData: Skill[] = [

@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail, Sparkles, Terminal } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
 import { personalData } from '../data';
 
 interface HeroProps {
@@ -110,37 +110,23 @@ export default function Hero({ setActiveSection }: HeroProps) {
           </div>
         </div>
 
-        {/* Visual Terminal/Graphic on Desktop */}
-        <div id="hero-graphic" className="hidden md:block md:col-span-4 justify-self-center w-full max-w-sm">
-          <div className="w-full aspect-square rounded-2xl border border-slate-200 dark:border-slate-850 bg-linear-to-b from-slate-50 to-white dark:from-slate-900/60 dark:to-slate-950 p-6 flex flex-col justify-between shadow-xs">
-            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
-              <div className="flex space-x-1.5">
-                <span className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700" />
-                <span className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700" />
-                <span className="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-700" />
-              </div>
-              <Terminal size={14} className="text-slate-400 dark:text-slate-650" />
+        {/* Profile Picture */}
+        <div id="hero-graphic" className="hidden md:flex md:col-span-4 justify-center items-center w-full">
+          <div className="relative group">
+            {/* Glow ring */}
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-400 opacity-30 blur-md group-hover:opacity-50 transition-opacity duration-300" />
+            {/* Border ring */}
+            <div className="relative w-64 h-64 rounded-full p-1 bg-gradient-to-br from-indigo-500 via-indigo-400 to-slate-300 dark:to-slate-700 shadow-xl">
+              <img
+                src={personalData.avatarUrl}
+                alt={personalData.name}
+                className="w-full h-full rounded-full object-cover object-top border-4 border-white dark:border-slate-950"
+              />
             </div>
-
-            <div className="flex-1 py-6 flex flex-col justify-center space-y-4 font-mono text-xs text-slate-500 dark:text-slate-400">
-              <p className="text-slate-800 dark:text-slate-200">
-                <span className="text-slate-400 dark:text-slate-600">%</span> npm install {personalData.name.split(' ')[0].toLowerCase()}
-              </p>
-              <p className="text-slate-400 dark:text-slate-600 leading-normal">
-                + portfolio@3.0.0<br/>
-                added 84 packages in 0.4s
-              </p>
-              <p className="text-slate-800 dark:text-slate-200">
-                <span className="text-slate-400 dark:text-slate-600">%</span> npx {personalData.name.split(' ')[0].toLowerCase()} dev
-              </p>
-              <p className="text-indigo-600 dark:text-indigo-400 font-semibold">
-                ⚡ Server running at port 3000
-              </p>
-            </div>
-
-            <div className="border-t border-slate-100 dark:border-slate-800 pt-4 flex justify-between items-center text-[10px] font-mono text-slate-400 dark:text-slate-500">
-              <span>LOC: 12,402</span>
-              <span>UTF-8</span>
+            {/* Available badge */}
+            <div className="absolute bottom-3 right-3 flex items-center space-x-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-full px-3 py-1.5 shadow-md">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">Available</span>
             </div>
           </div>
         </div>
